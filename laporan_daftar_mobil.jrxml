@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporan_daftar_mobil" language="groovy" pageWidth="595" pageHeight="597" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5bd9f278-445e-4a81-8b77-9180d19ea1d9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     mobil.`nomor` AS mobil_nomor,
+     mobil.`jenis` AS mobil_jenis,
+     mobil.`plat` AS mobil_plat
+FROM
+     `mobil` mobil]]>
+	</queryString>
+	<field name="mobil_nomor" class="java.lang.String"/>
+	<field name="mobil_jenis" class="java.lang.String"/>
+	<field name="mobil_plat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="186" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="143" y="21" width="412" height="33" uuid="44573f98-64e2-4ef9-ba02-b880694283ef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[PEMADAM KEBAKARAN KRAMAT DJATI]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="10" width="133" height="92" uuid="0aff1df6-edd7-4277-8eeb-db8c8df7f2e4"/>
+				<imageExpression><![CDATA["D:\\File kuliah\\Semester 6\\Pemrograman Visual\\project\\Netbeansproject\\Project_KKP\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="143" y="54" width="371" height="24" uuid="afaaa352-63e5-4d09-b323-bb9753063d89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<text><![CDATA[Jl. Kerja Bakti II No.2, RT.2/RW.4, Kramat Jati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="143" y="78" width="371" height="24" uuid="3f13fbf3-9789-4a5f-ab10-c3bc9ce5bb44"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<text><![CDATA[Kec.Kramat Jati, Kota Jakarta Timur]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="128" width="529" height="1" uuid="1c077987-f4ae-4efb-98bd-3438d3fc7aa9"/>
+			</line>
+			<staticText>
+				<reportElement style="Title" mode="Opaque" x="54" y="139" width="447" height="33" backcolor="#009933" uuid="98ab9ba2-b301-46cc-a912-0447e11bb1f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DAFTAR MOBIL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="c6f7a592-3d4e-4800-8821-34128a10308d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="8a26b4b5-14b8-4e1d-be72-772b64a882ec"/>
+				<text><![CDATA[Kode Mobil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="9dec355a-7c42-4a15-aa70-24185683018d"/>
+				<text><![CDATA[Jenis Mobil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="eab503c5-9a3b-497c-8263-f52c81f86847"/>
+				<text><![CDATA[Plat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="7695f7bd-c7c2-46bf-a517-1af2def8bcee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="58f17b2f-1c72-4b4a-92ca-64caea2f9dc3"/>
+				<textFieldExpression><![CDATA[$F{mobil_nomor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="e06a11fc-bb99-4777-b963-da35ca5c872b"/>
+				<textFieldExpression><![CDATA[$F{mobil_jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="29780270-f581-4f66-8f85-40d47f52fc35"/>
+				<textFieldExpression><![CDATA[$F{mobil_plat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="94" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b9e9ed83-5e1c-404e-99d1-0e4ded1abe00"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="365" y="5" width="100" height="20" uuid="cfb1b2cd-c164-4de5-92e3-e7c4c79e13ef"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="402" y="5" width="144" height="20" forecolor="#000000" uuid="156fb392-0a5a-4a95-89a1-049d940e486a"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[((new SimpleDateFormat("EEEEE dd MMMM yyyy", new Locale("id","ID"))).format(new java.util.Date()))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="25" width="223" height="20" uuid="6c5ef357-9b3d-468b-973c-ebd0e053f482"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Ka.Seksi Pemadaman & Penyelamatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="74" width="169" height="20" uuid="ba56c485-4a0b-4e1a-9a15-247c3359e134"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nurdin Silalahi, S.Pd]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="22cce898-3f13-4798-8a48-f6cb78f5b964"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="5ff97b54-787b-4811-967b-239db7a3a4ce"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

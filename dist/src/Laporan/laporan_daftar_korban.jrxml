@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporan_daftar_korban" language="groovy" pageWidth="595" pageHeight="595" orientation="Landscape" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="61b3e547-0c87-45c9-a85a-a03f3c610e9d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     korban_jiwa.`nik` AS korban_jiwa_nik,
+     korban_jiwa.`nama` AS korban_jiwa_nama,
+     korban_jiwa.`usia` AS korban_jiwa_usia
+FROM
+     `korban_jiwa` korban_jiwa]]>
+	</queryString>
+	<field name="korban_jiwa_nik" class="java.lang.String"/>
+	<field name="korban_jiwa_nama" class="java.lang.String"/>
+	<field name="korban_jiwa_usia" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="189" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="143" y="21" width="412" height="33" uuid="e90bc872-1d9b-4c6d-8d8b-916667bb23c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[PEMADAM KEBAKARAN KRAMAT DJATI]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="10" width="133" height="92" uuid="875c7d5c-17dd-4493-9ed0-f9ee939a8174"/>
+				<imageExpression><![CDATA["D:\\File kuliah\\Semester 6\\Pemrograman Visual\\project\\Netbeansproject\\Project_KKP\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="143" y="54" width="371" height="24" uuid="795c26d6-9831-4a4c-9924-9f86fa472935"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<text><![CDATA[Jl. Kerja Bakti II No.2, RT.2/RW.4, Kramat Jati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="143" y="78" width="371" height="24" uuid="e861fe91-adae-451d-9e56-2c0d7a31b7d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<text><![CDATA[Kec.Kramat Jati, Kota Jakarta Timur]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="128" width="529" height="1" uuid="3c6199aa-a1c8-44d7-8546-87a1cd1c56e7"/>
+			</line>
+			<staticText>
+				<reportElement style="Title" mode="Opaque" x="54" y="139" width="447" height="33" backcolor="#009933" uuid="44dda8f8-4586-447e-831f-75a019fd7a29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DAFTAR KORBAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="2e6d6b51-96c7-451c-9626-ec9a54febd8a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="3215ecf8-2e92-4112-b62d-c797ec13f30c"/>
+				<text><![CDATA[NIK Korban]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="0447162a-ae99-4884-903f-8fb5c08f1858"/>
+				<text><![CDATA[Nama Korban]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="c26a4632-a2e3-49ec-9f42-9cbdb8beeb7a"/>
+				<text><![CDATA[Usia Korban]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="192ae5c8-c7fa-494c-8c2f-dba2296bae85"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="137211b9-93ff-4aed-b48d-89a09e7636df"/>
+				<textFieldExpression><![CDATA[$F{korban_jiwa_nik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="27f476c1-c76b-4afa-bb9a-8d8072c68775"/>
+				<textFieldExpression><![CDATA[$F{korban_jiwa_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="70ac41de-a2f4-4fed-bf14-4c5d1053bd0b"/>
+				<textFieldExpression><![CDATA[$F{korban_jiwa_usia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="93" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="92af4d7e-76c1-464c-9245-d16556fa0ba4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="363" y="5" width="100" height="20" uuid="73f53993-7c69-41eb-919e-7fef01f9647e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="400" y="5" width="144" height="20" forecolor="#000000" uuid="f3cf29ae-f18e-4046-870b-72031a7ef3cd"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[((new SimpleDateFormat("EEEEE dd MMMM yyyy", new Locale("id","ID"))).format(new java.util.Date()))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="25" width="220" height="20" uuid="b716c5db-d933-4a0c-a571-185852b9f149"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Ka.Seksi Pemadaman & Penyelamatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="73" width="169" height="20" uuid="55f70829-ee28-464e-adda-ad9cee7aa88e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nurdin Silalahi, S.Pd]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="8b907a0e-3e6b-4866-93cb-5774d9b22d1e"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="f51bc819-7dae-43e1-92f9-316581394247"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Laporan_daftar_petuags" language="groovy" pageWidth="604" pageHeight="595" orientation="Landscape" columnWidth="564" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f1d281c0-8845-4700-80c1-5d2981a7e539">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     anggota.`id_ptgs` AS anggota_id_ptgs,
+     anggota.`nama` AS anggota_nama,
+     anggota.`jabatan` AS anggota_jabatan,
+     anggota.`no_hp` AS anggota_no_hp
+FROM
+     `anggota` anggota]]>
+	</queryString>
+	<field name="anggota_id_ptgs" class="java.lang.String"/>
+	<field name="anggota_nama" class="java.lang.String"/>
+	<field name="anggota_jabatan" class="java.lang.String"/>
+	<field name="anggota_no_hp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="188" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="143" y="21" width="412" height="33" uuid="91d9adca-e06d-4ac3-90c6-cd9d11c8a2f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[PEMADAM KEBAKARAN KRAMAT DJATI]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="10" width="133" height="92" uuid="704a0147-6a4c-456e-8184-48551d52201b"/>
+				<imageExpression><![CDATA["D:\\File kuliah\\Semester 6\\Pemrograman Visual\\project\\Netbeansproject\\Project_KKP\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="143" y="54" width="371" height="24" uuid="5cc4eefa-303b-4a83-af2f-91a073f1ca89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<text><![CDATA[Jl. Kerja Bakti II No.2, RT.2/RW.4, Kramat Jati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="143" y="78" width="371" height="24" uuid="b9bda41b-7b0a-4ecb-abd7-53aaa3e7967d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15"/>
+				</textElement>
+				<text><![CDATA[Kec.Kramat Jati, Kota Jakarta Timur]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="128" width="529" height="1" uuid="a8997007-1843-4e44-b219-99f27de72c79"/>
+			</line>
+			<staticText>
+				<reportElement style="Title" mode="Opaque" x="54" y="139" width="447" height="33" backcolor="#009933" uuid="4b77c893-adaa-4686-a2a9-aa10805db357"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DAFTAR PETUGAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="564" height="1" uuid="1a8bff77-b63f-459c-80d7-3638c4fe02c6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="543676ef-a0c0-4990-b06e-f2958009555c"/>
+				<text><![CDATA[Kode Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="138" height="15" uuid="a493aac5-13cd-4bac-bb74-c232ba788a1e"/>
+				<text><![CDATA[Nama Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="138" height="15" uuid="26153a26-ec4b-49d5-89b9-79b7a3f7a91f"/>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="138" height="15" uuid="7e4ce8de-4f52-4791-91db-211e73793850"/>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="564" height="1" uuid="f3c49652-c34c-48a9-a6af-3d81595e128e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="b1bbba47-4512-4046-bca3-5c54f7660b97"/>
+				<textFieldExpression><![CDATA[$F{anggota_id_ptgs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="f25a0e84-fc8a-4e18-b987-e6daf47e8321"/>
+				<textFieldExpression><![CDATA[$F{anggota_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="3422367e-3912-4929-867e-5a0e12d3e3f5"/>
+				<textFieldExpression><![CDATA[$F{anggota_jabatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="50288bbe-645e-4698-9515-aae5fda25f10"/>
+				<textFieldExpression><![CDATA[$F{anggota_no_hp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="99" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="564" height="1" uuid="5ede2a56-0011-4dd8-8472-bc301a8e0fda"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="374" y="4" width="100" height="20" uuid="0c224cf8-8fd1-4d55-86b1-203a63152ec3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="411" y="4" width="144" height="20" forecolor="#000000" uuid="02af3f12-78cb-4062-9214-7e565f17af6e"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[((new SimpleDateFormat("EEEEE dd MMMM yyyy", new Locale("id","ID"))).format(new java.util.Date()))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="341" y="24" width="223" height="20" uuid="d9bde86b-8a72-4d11-89e0-f61c31eec864"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Ka.Seksi Pemadaman & Penyelamatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="79" width="169" height="20" uuid="eb6d9d25-4ed6-4bdd-bd62-d90540661bed"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nurdin Silalahi, S.Pd]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="7dcebab6-661d-4905-a83f-2aa99e1ac3e6"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="73a43c65-6ea3-4d15-9445-63487e6fc0ee"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
